@@ -1,863 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mental Health Signal</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health Score Estimator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <main class="page">
-
-        <!-- =====================================================
-             HEADER
-        ====================================================== -->
-
-        <header class="hero">
-
-            <div class="eyebrow">
-                STUDENT WELLNESS ANALYTICS
-            </div>
-
-            <h1>
-                Mental Health <em>Signal</em>
-            </h1>
-
-            <p>
-                A quick read on how habits, screen time, and stress are
-                trending — modeled from your daily rhythm, not a diagnosis.
-            </p>
-
-        </header>
-
-
-        <!-- =====================================================
-             DASHBOARD
-        ====================================================== -->
-
-        <section class="dashboard">
-
-
-            <!-- =================================================
-                 LEFT FORM CARD
-            ================================================== -->
-
-            <div class="form-card">
-
-                <form id="predict-form" novalidate>
-
-
-                    <!-- =========================================
-                         SECTION 01 — PROFILE
-                    ========================================== -->
-
-                    <section class="form-section">
-
-                        <div class="section-heading">
-
-                            <span class="section-number">
-                                01
-                            </span>
-
-                            <h2>
-                                Profile
-                            </h2>
-
-                        </div>
-
-
-                        <div class="form-grid three-columns">
-
-
-                            <!-- AGE -->
-
-                            <div class="field">
-
-                                <label for="age">
-                                    Age
-                                </label>
-
-                                <input
-                                    type="number"
-                                    id="age"
-                                    name="age"
-                                    placeholder="e.g. 21"
-                                    min="10"
-                                    max="100"
-                                >
-
-                                <small>
-                                    10–100
-                                </small>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- GENDER -->
-
-                            <div class="field">
-
-                                <label for="gender">
-                                    Gender
-                                </label>
-
-                                <select
-                                    id="gender"
-                                    name="gender"
-                                >
-
-                                    <option value="">
-                                        Select
-                                    </option>
-
-                                    <option value="Male">
-                                        Male
-                                    </option>
-
-                                    <option value="Female">
-                                        Female
-                                    </option>
-
-                                </select>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- COUNTRY -->
-
-                            <div class="field">
-
-                                <label for="country">
-                                    Country
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="country"
-                                    name="country"
-                                    placeholder="e.g. India"
-                                >
-
-                                <small>
-                                    Not listed? Type it anyway.
-                                </small>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-
-                    <!-- =========================================
-                         SECTION 02 — ACADEMIC & DIGITAL HABITS
-                    ========================================== -->
-
-                    <section class="form-section">
-
-                        <div class="section-heading">
-
-                            <span class="section-number">
-                                02
-                            </span>
-
-                            <h2>
-                                Academic & Digital Habits
-                            </h2>
-
-                        </div>
-
-
-                        <div class="form-grid two-columns">
-
-
-                            <!-- ACADEMIC LEVEL -->
-
-                            <div class="field">
-
-                                <label for="academic_level">
-                                    Academic level
-                                </label>
-
-                                <select
-                                    id="academic_level"
-                                    name="academic_level"
-                                >
-
-                                    <option value="">
-                                        Select
-                                    </option>
-
-                                    <option value="Undergraduate">
-                                        Undergraduate
-                                    </option>
-
-                                    <option value="Graduate">
-                                        Graduate
-                                    </option>
-
-                                    <option value="High School">
-                                        High School
-                                    </option>
-
-                                </select>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- PLATFORM -->
-
-                            <div class="field">
-
-                                <label for="most_used_platform">
-                                    Most-used platform
-                                </label>
-
-                                <select
-                                    id="most_used_platform"
-                                    name="most_used_platform"
-                                >
-
-                                    <option value="">
-                                        Select
-                                    </option>
-
-                                    <option value="Facebook">
-                                        Facebook
-                                    </option>
-
-                                    <option value="LinkedIn">
-                                        LinkedIn
-                                    </option>
-
-                                    <option value="Instagram">
-                                        Instagram
-                                    </option>
-
-                                    <option value="Snapchat">
-                                        Snapchat
-                                    </option>
-
-                                    <option value="Twitter">
-                                        Twitter
-                                    </option>
-
-                                    <option value="YouTube">
-                                        YouTube
-                                    </option>
-
-                                    <option value="TikTok">
-                                        TikTok
-                                    </option>
-
-                                    <option value="LINE">
-                                        LINE
-                                    </option>
-
-                                    <option value="KakaoTalk">
-                                        KakaoTalk
-                                    </option>
-
-                                    <option value="VKontakte">
-                                        VKontakte
-                                    </option>
-
-                                    <option value="WhatsApp">
-                                        WhatsApp
-                                    </option>
-
-                                    <option value="WeChat">
-                                        WeChat
-                                    </option>
-
-                                </select>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- PURPOSE -->
-
-                            <div class="field">
-
-                                <label for="purpose_of_use">
-                                    Primary purpose
-                                </label>
-
-                                <select
-                                    id="purpose_of_use"
-                                    name="purpose_of_use"
-                                >
-
-                                    <option value="">
-                                        Select
-                                    </option>
-
-                                    <option value="Networking">
-                                        Networking
-                                    </option>
-
-                                    <option value="Education">
-                                        Education
-                                    </option>
-
-                                    <option value="Entertainment">
-                                        Entertainment
-                                    </option>
-
-                                    <option value="News">
-                                        News
-                                    </option>
-
-                                </select>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- SCREEN TIME -->
-
-                            <div class="field">
-
-                                <label for="avg_daily_usage_hours">
-                                    Avg. daily screen time
-                                </label>
-
-                                <div class="input-unit">
-
-                                    <input
-                                        type="number"
-                                        id="avg_daily_usage_hours"
-                                        name="avg_daily_usage_hours"
-                                        placeholder="0.0"
-                                        min="0"
-                                        max="24"
-                                        step="0.1"
-                                    >
-
-                                    <span>
-                                        hrs
-                                    </span>
-
-                                </div>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- PHONE UNLOCKS -->
-
-                            <div class="field full-width">
-
-                                <label for="daily_unlocks">
-                                    Daily phone unlocks
-                                </label>
-
-                                <input
-                                    type="number"
-                                    id="daily_unlocks"
-                                    name="daily_unlocks"
-                                    placeholder="e.g. 60"
-                                    min="0"
-                                >
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-
-                    <!-- =========================================
-                         SECTION 03 — LIFESTYLE & STRESS
-                    ========================================== -->
-
-                    <section class="form-section last-section">
-
-                        <div class="section-heading">
-
-                            <span class="section-number">
-                                03
-                            </span>
-
-                            <h2>
-                                Lifestyle & Stress
-                            </h2>
-
-                        </div>
-
-
-                        <div class="form-grid three-columns">
-
-
-                            <!-- STUDY HOURS -->
-
-                            <div class="field">
-
-                                <label for="study_hours">
-                                    Study hours / day
-                                </label>
-
-                                <div class="input-unit">
-
-                                    <input
-                                        type="number"
-                                        id="study_hours"
-                                        name="study_hours"
-                                        placeholder="0.0"
-                                        min="0"
-                                        max="24"
-                                        step="0.1"
-                                    >
-
-                                    <span>
-                                        hrs
-                                    </span>
-
-                                </div>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- PHYSICAL ACTIVITY -->
-
-                            <div class="field">
-
-                                <label for="physical_activity_hours">
-                                    Physical activity / day
-                                </label>
-
-                                <div class="input-unit">
-
-                                    <input
-                                        type="number"
-                                        id="physical_activity_hours"
-                                        name="physical_activity_hours"
-                                        placeholder="0.0"
-                                        min="0"
-                                        max="24"
-                                        step="0.1"
-                                    >
-
-                                    <span>
-                                        hrs
-                                    </span>
-
-                                </div>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-
-                            <!-- SLEEP -->
-
-                            <div class="field">
-
-                                <label for="sleep_hours_per_night">
-                                    Sleep / night
-                                </label>
-
-                                <div class="input-unit">
-
-                                    <input
-                                        type="number"
-                                        id="sleep_hours_per_night"
-                                        name="sleep_hours_per_night"
-                                        placeholder="0.0"
-                                        min="0"
-                                        max="24"
-                                        step="0.1"
-                                    >
-
-                                    <span>
-                                        hrs
-                                    </span>
-
-                                </div>
-
-                                <div class="error-msg"></div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- =====================================
-                             STRESS LEVEL
-                        ====================================== -->
-
-                        <div class="stress-field">
-
-                            <label>
-                                Perceived stress level
-                            </label>
-
-
-                            <div
-                                class="seg-group"
-                                id="stress_level_group"
-                            >
-
-                                <button
-                                    type="button"
-                                    class="seg-btn"
-                                    data-value="Low"
-                                >
-                                    Low
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="seg-btn"
-                                    data-value="Medium"
-                                >
-                                    Medium
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="seg-btn"
-                                    data-value="High"
-                                >
-                                    High
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="seg-btn"
-                                    data-value="Very High"
-                                >
-                                    Very high
-                                </button>
-
-                            </div>
-
-
-                            <!-- Hidden value used by JS -->
-
-                            <input
-                                type="hidden"
-                                id="stress_level"
-                                name="stress_level"
-                            >
-
-                            <div class="error-msg"></div>
-
-                        </div>
-
-
-
-                        <!-- =====================================
-                             SUBMIT
-                        ====================================== -->
-
-                        <button
-                            type="submit"
-                            id="submit-btn"
-                            class="submit-btn"
-                        >
-
-                            <span>
-                                Read my signal
-                            </span>
-
-                            <span class="submit-arrow">
-                                →
-                            </span>
-
-                        </button>
-
-                    </section>
-
-                </form>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 RIGHT RESULT CARD
-            ================================================== -->
-
-            <aside class="result-card">
-
-
-                <!-- =============================================
-                     IDLE STATE
-                ============================================== -->
-
-                <div
-                    id="state-idle"
-                    class="result-state"
-                >
-
-                    <div class="signal-label">
-                        YOUR SIGNAL
-                    </div>
-
-
-                    <!-- GAUGE -->
-
-                    <div class="gauge-wrapper">
-
-                        <svg
-                            class="gauge"
-                            viewBox="0 0 240 155"
-                        >
-
-                            <!-- Background -->
-
-                            <path
-                                class="gauge-track"
-                                d="M 20 140 A 100 100 0 0 1 220 140"
-                            />
-
-                            <!-- Filled portion -->
-
-                            <path
-                                id="gauge-fill"
-                                class="gauge-fill"
-                                d="M 20 140 A 100 100 0 0 1 220 140"
-                                pathLength="314"
-                                stroke-dasharray="314"
-                                stroke-dashoffset="314"
-                            />
-
-                            <!-- Tick marks -->
-
-                            <g class="gauge-ticks"></g>
-
-                        </svg>
-
-                    </div>
-
-
-                    <h2 class="idle-title">
-                        Your score will appear here
-                    </h2>
-
-
-                    <p class="idle-copy">
-                        Fill in the form and submit to generate
-                        a predicted mental health score from 0–10.
-                    </p>
-
-                </div>
-
-
-
-                <!-- =============================================
-                     LOADING STATE
-                ============================================== -->
-
-                <div
-                    id="state-loading"
-                    class="result-state"
-                    hidden
-                >
-
-                    <div class="signal-label">
-                        YOUR SIGNAL
-                    </div>
-
-
-                    <div class="loading-animation">
-
-                        <div class="loading-ring"></div>
-
-                    </div>
-
-
-                    <h2 class="loading-title">
-                        Reading the signal...
-                    </h2>
-
-
-                    <p class="loading-copy">
-                        Running your habits through the model.
-                    </p>
-
-                </div>
-
-
-
-                <!-- =============================================
-                     RESULT STATE
-                ============================================== -->
-
-                <div
-                    id="state-result"
-                    class="result-state"
-                    hidden
-                >
-
-                    <div class="signal-label">
-                        YOUR SIGNAL
-                    </div>
-
-
-                    <!-- RESULT GAUGE -->
-
-                    <div class="gauge-wrapper">
-
-                        <svg
-                            class="gauge"
-                            viewBox="0 0 240 155"
-                        >
-
-                            <path
-                                class="gauge-track"
-                                d="M 20 140 A 100 100 0 0 1 220 140"
-                            />
-
-                            <path
-                                id="gauge-fill-result"
-                                class="gauge-fill"
-                                d="M 20 140 A 100 100 0 0 1 220 140"
-                                pathLength="314"
-                                stroke-dasharray="314"
-                                stroke-dashoffset="314"
-                            />
-
-                        </svg>
-
-                    </div>
-
-
-                    <!-- SCORE -->
-
-                    <div class="score-display">
-
-                        <span id="score-number">
-                            0.00
-                        </span>
-
-                        <small>
-                            /10
-                        </small>
-
-                    </div>
-
-
-                    <div
-                        id="score-band"
-                        class="score-band"
-                    >
-                        —
-                    </div>
-
-
-                    <p
-                        id="score-context"
-                        class="score-context"
-                    ></p>
-
-
-                    <button
-                        type="button"
-                        id="reset-btn"
-                        class="reset-btn"
-                    >
-                        Run another read
-                    </button>
-
-                </div>
-
-
-
-                <!-- =============================================
-                     ERROR STATE
-                ============================================== -->
-
-                <div
-                    id="state-error"
-                    class="result-state error-state"
-                    hidden
-                >
-
-                    <div class="error-icon">
-                        !
-                    </div>
-
-
-                    <h2
-                        id="error-label"
-                        class="error-title"
-                    >
-                        Prediction failed
-                    </h2>
-
-
-                    <p
-                        id="error-copy"
-                        class="error-copy"
-                    >
-                        Something went wrong.
-                    </p>
-
-
-                    <button
-                        type="button"
-                        id="error-retry-btn"
-                        class="retry-btn"
-                    >
-                        Try again
-                    </button>
-
-                </div>
-
-
-
-                <!-- =============================================
-                     DISCLAIMER
-                ============================================== -->
-
-                <div class="disclaimer">
-
-                    <span class="info-icon">
-                        i
-                    </span>
-
-                    <p>
-                        This prediction is an ML-based signal,
-                        not a medical diagnosis.
-                    </p>
-
-                </div>
-
-            </aside>
-
-        </section>
-
-    </main>
-
-
-    <script src="script.js"></script>
-
+<div class="page">
+
+  <header class="intro">
+    <h1><span class="orb" id="status-orb" aria-hidden="true"></span>How's your screen time treating you?</h1>
+    <p class="lede">Answer a few questions about your habits below. A small model trained on student survey data will estimate a mental health score — a rough signal, not a diagnosis.</p>
+  </header>
+
+  <form id="predict-form" class="panel" novalidate>
+
+    <section class="group">
+      <h2>About you</h2>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="age">Age</label>
+          <input type="number" id="age" min="10" max="100" value="20" required>
+        </div>
+        <div class="field">
+          <label id="gender-label">Gender</label>
+          <div class="segmented" data-name="gender" role="group" aria-labelledby="gender-label">
+            <button type="button" data-value="Male">Male</button>
+            <button type="button" data-value="Female">Female</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="country">Country</label>
+          <select id="country">
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Other">Other (not listed)</option>
+          </select>
+        </div>
+        <div class="field" id="country-other-field" hidden>
+          <label for="country-other">Which country?</label>
+          <input type="text" id="country-other" placeholder="Type your country">
+        </div>
+      </div>
+
+      <div class="field">
+        <label id="academic-label">Academic level</label>
+        <div class="segmented" data-name="academic_level" role="group" aria-labelledby="academic-label">
+          <button type="button" data-value="High School">High School</button>
+          <button type="button" data-value="Undergraduate">Undergraduate</button>
+          <button type="button" data-value="Graduate">Graduate</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Digital habits</h2>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="platform">Most used platform</label>
+          <select id="platform">
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Facebook">Facebook</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Snapchat">Snapchat</option>
+            <option value="Twitter">Twitter</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="WeChat">WeChat</option>
+            <option value="LINE">LINE</option>
+            <option value="KakaoTalk">KakaoTalk</option>
+            <option value="VKontakte">VKontakte</option>
+          </select>
+        </div>
+        <div class="field">
+          <label id="purpose-label">Main purpose</label>
+          <div class="segmented" data-name="purpose_of_use" role="group" aria-labelledby="purpose-label">
+            <button type="button" data-value="Networking">Networking</button>
+            <button type="button" data-value="Education">Education</button>
+            <button type="button" data-value="Entertainment">Entertainment</button>
+            <button type="button" data-value="News">News</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field slider-field">
+        <label for="usage">Average daily usage <span class="readout" id="usage-readout">3.5 hrs</span></label>
+        <input type="range" id="usage" min="0" max="24" step="0.1" value="3.5">
+      </div>
+
+      <div class="field">
+        <label for="unlocks">Daily phone unlocks</label>
+        <input type="number" id="unlocks" min="0" step="1" value="40" required>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Sleep &amp; wellbeing</h2>
+
+      <div class="field slider-field">
+        <label for="sleep">Sleep per night <span class="readout" id="sleep-readout">7.0 hrs</span></label>
+        <input type="range" id="sleep" min="0" max="24" step="0.1" value="7">
+      </div>
+
+      <div class="field slider-field">
+        <label for="study">Study hours per day <span class="readout" id="study-readout">3.0 hrs</span></label>
+        <input type="range" id="study" min="0" max="24" step="0.1" value="3">
+      </div>
+
+      <div class="field slider-field">
+        <label for="activity">Physical activity per day <span class="readout" id="activity-readout">1.0 hrs</span></label>
+        <input type="range" id="activity" min="0" max="24" step="0.1" value="1">
+      </div>
+
+      <div class="field">
+        <label id="stress-label">Stress level</label>
+        <div class="segmented" data-name="stress_level" role="group" aria-labelledby="stress-label">
+          <button type="button" data-value="Low">Low</button>
+          <button type="button" data-value="Medium">Medium</button>
+          <button type="button" data-value="High">High</button>
+          <button type="button" data-value="Very High">Very High</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="submit-row">
+      <button type="submit" id="submit-btn">Get my score</button>
+      <p class="hint" id="form-hint" role="status"></p>
+    </div>
+  </form>
+
+  <section id="result" class="result" hidden aria-live="polite">
+    <div class="result-number"><span id="result-value">0.0</span><span class="result-max">/10</span></div>
+    <div class="meter">
+      <div class="meter-fill" id="meter-fill"></div>
+    </div>
+    <div class="meter-scale"><span>0</span><span>5</span><span>10</span></div>
+    <p class="result-label" id="result-label"></p>
+    <p class="disclaimer">This is a statistical estimate from a class project, not a medical assessment. If you're struggling, please talk to a counselor or someone you trust.</p>
+  </section>
+
+  <footer class="foot">
+    <p>Model served locally at <code>127.0.0.1:8000</code></p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
-
 </html>
