@@ -135,7 +135,7 @@ form.addEventListener("submit", async (event) => {
   statusOrb.classList.add("is-loading");
 
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${API_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
