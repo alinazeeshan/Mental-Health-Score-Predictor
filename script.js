@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = "https://mental-health-score-predictor-y3mt.onrender.com";
 
 // ---------- Segmented controls ----------
 // Each .segmented div holds buttons with data-value; we track the
